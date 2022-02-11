@@ -366,7 +366,8 @@ function artistByCountry(arr, nation){
   } 
   return artByCountry;    
 }
-console.log('Task 9', artistByCountry(artists, 'Spanish'));
+console.log('Task 9', artistByCountry(artists, 'Spanish'))
+console.log('end of challenge !')
 
 
 /* ***** END OF TASKS ***** */
