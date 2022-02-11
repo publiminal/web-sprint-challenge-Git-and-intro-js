@@ -245,14 +245,14 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(artistsArr) {
-    //const century = artistsArr.split(' - ');
-    //console.log('century', century);
     let artists20s = [];
     for(let i=0; i<artistsArr.length; i++){
         let century = artistsArr[i].years.split(' - ');
-        isCenturyArt = parseInt(century[0]) >= 1900 && parseInt(century[1]) <= 2000   
+        let isCenturyArt = parseInt(century[0]) >= 1900 && parseInt(century[1]) <= 2000 ;
         //console.log(`${i} century is ${isCenturyArt}`) ;
-        if(isCenturyArt){artists20s.push(artistsArr[i].name)}
+        if(isCenturyArt){
+          artists20s.push(artistsArr[i].name);
+        }
     } 
     //console.log('artists20s', artists20s);
     return artists20s;
@@ -269,9 +269,11 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(arr, index) {
+  arr.splice(index,1);
+  return arr.length;
 }
+console.log('Task 5', removeArtist(artists, 19));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -289,10 +291,20 @@ Use addArtist to do the following:
 3. Return the resulting array
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
-
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+const me = { 
+  id: 20,
+  name: 'Andres Bernal', 
+  years: '1978 - 2022',
+  genre: 'Web Design', 
+  nationality: 'Colombian',
+  bio: 'There was a time where artists existed, then he born.'
+}  
+function addArtist(arr) {
+  arr.push(me);  
+  return arr;
 }
+console.log('Task 6', addArtist(artists));
+
 
 
 
@@ -303,9 +315,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(artistsArr) {
+  const hunredPaints = [];
+    for(let i=0; i<artistsArr.length; i++){
+        let is100 = artistsArr[i].paintings > 100 ;
+        if(is100){
+          hunredPaints.push(artistsArr[i].name);
+        }
+    } 
+    return hunredPaints;
 }
+console.log('Task 7', lotsOfArt(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
